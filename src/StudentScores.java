@@ -1,5 +1,51 @@
+import java.util.Scanner;
+
 public class StudentScores {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int numStudents;
+
+        do{
+            System.out.print("Enter total number of students:");
+            numStudents = input.nextInt();
+            if(numStudents < 5 || numStudents>10){
+                System.out.println(" invalid number of student. Enter a number between 5 and 10");
+            }
+        } while(numStudents < 5 || numStudents > 10);
+
+        int[]scores = new int[numStudents];
+        int sum =0;
+        int highest =0;
+        int lowest = 100;
+
+        for(int i =0; i <numStudents; i++){
+            do{
+                System.out.print("\nEnter score for students" +(i +1));
+                scores[i]= input.nextInt();
+            }while (scores[i] < 0 || scores[i] >100);
+            sum += scores[i];
+
+            if(scores[i] > highest){highest = scores[i];}
+            if (scores[i] < lowest){lowest = scores[i];}
+            double average = sum/ numStudents;
+            System.out.println("\n Average Score = "+ average);
+            System.out.println("Lowest score = " + lowest);
+            System.out.println("Highest score  = " + highest);
+
+            System.out.println(" Pass/Fail Results:");
+            for(int i = 0; i < numStudents; i++){
+                if(scores[i] >= 50){
+                    System.out.println("Student" + (i + 1) + ":Pass");
+                }else {
+                    System.out.println("Student " +(i + 1) +":Fail");
+                }
+            }
+
+        }
+
     }
-}
+
+
+
+
+    }
