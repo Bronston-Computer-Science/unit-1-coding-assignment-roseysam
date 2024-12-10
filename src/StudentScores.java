@@ -8,7 +8,7 @@ public class StudentScores {
         do {
             System.out.print("Enter total number of students:");
             numStudents = input.nextInt();
-            if (numStudents < 5 || numStudents > 10)  {
+            if (numStudents < 5 || numStudents > 10) {
                 System.out.println(" invalid number of student. Enter a number between 5 and 10");
             }
         } while (numStudents < 5 || numStudents > 10);
@@ -20,7 +20,7 @@ public class StudentScores {
 
         for (int i = 0; i < numStudents; i++) {
             do {
-                System.out.print("\nEnter score for students" + (i + 1));
+                System.out.print("\nEnter score for students " + (i + 1)  + ":");
                 scores[i] = input.nextInt();
             } while (scores[i] < 0 || scores[i] > 100);
             sum += scores[i];
@@ -32,17 +32,17 @@ public class StudentScores {
                 lowest = scores[i];
             }
         }
-        double average = sum/ numStudents;
-        System.out.println("Average Score = "+ average);
+        double average = (double) sum / numStudents;
+        System.out.println("\nAverage Score = " + average);
         System.out.println("Lowest score = " + lowest);
-        System.out.println("Highest score  = " + highest);
+        System.out.println("Highest score = " + highest);
 
         System.out.println("\nPass/Fail Results:");
         for(int i = 0; i < numStudents; i++){
             if(scores[i] >= 50){
-                System.out.println("Student" + (i + 1) + ":Pass");
+                System.out.println("Student" + (i + 1) + ":Score = " + scores[i] + "(Pass)");
             }else {
-                System.out.println("Student " +(i + 1) +":Fail");
+                System.out.println("Student " + (i + 1) + ":Score = " + scores[i] + "(Fail)");
             }
         }
     }
