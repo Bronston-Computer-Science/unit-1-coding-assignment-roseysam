@@ -38,8 +38,8 @@ public class StudentScores {
         System.out.println("Highest score = " + highest);
 
         System.out.println("\nPass/Fail Results:");
-        for(int i = 0; i < numStudents; i++){
-            if(scores[i] >= 50){
+        for(int i = 0; i < numStudents; i++) {
+            if(scores[i] >= 50) {
                 System.out.println("Student" + (i + 1) + ":Score = " + scores[i] + "(Pass)");
             }else {
                 System.out.println("Student " + (i + 1) + ":Score = " + scores[i] + "(Fail)");
